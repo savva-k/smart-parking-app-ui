@@ -1,15 +1,7 @@
 import React, { Component } from 'react';
-import { withStyles } from 'material-ui/styles';
-import Grid from 'material-ui/Grid';
 import ParkingsMap from './ParkingsMap';
 
-const styles = theme => ({
-  content: {
-    flex: '1 0 auto',
-  },
-})
-
-class Content extends Component {
+class MapPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -39,19 +31,14 @@ class Content extends Component {
   }
 
   render() {
-    const { classes } = this.props;
     return (
-      <main className={ classes.content }>
-        <Grid container spacing={12} alignItems="stretch">
-          <Grid item sm={12}>
-            { this.state.isSizeDefined &&
-              <ParkingsMap width={ this.state.mapWidth } height={ this.state.mapHeight } />
-            }
-          </Grid>
-        </Grid>
-      </main>
+      <div>
+        { this.state.isSizeDefined &&
+          <ParkingsMap width={ this.state.mapWidth } height={ this.state.mapHeight } />
+        }
+      </div>
     );
   }
 }
 
-export default withStyles(styles)(Content);
+export default MapPage;

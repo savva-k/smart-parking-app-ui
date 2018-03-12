@@ -3,14 +3,19 @@ import ReactDOM from 'react-dom';
 import { MuiThemeProvider } from 'material-ui/styles';
 import './index.css';
 import Header from './Header';
-import Content from './Content';
+import MainContent from './MainContent';
 import Footer from './Footer';
+import { BrowserRouter as Router } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
 
 const app = <MuiThemeProvider>
-        <Header/>
-        <Content/>
-        <Footer/>
+        <Router>
+            <div>
+                <Header/>
+                <MainContent/>
+                <Footer/>
+            </div>
+        </Router>
     </MuiThemeProvider>;
 
 ReactDOM.render(app, document.getElementById('root'));
