@@ -7,14 +7,6 @@ const styles = theme => ({
   content: {
     flex: '1 0 auto',
   },
-  aaa: {
-    backgroudColor: 'black',
-    border: '1px solid green',
-  },
-  bbb: {
-    backgroudColor: 'yellow',
-    border: '1px solid green',
-  },
 })
 
 class Content extends Component {
@@ -28,18 +20,18 @@ class Content extends Component {
   }
 
   updateMapSize() {
-    // const bodyHeight = document.querySelector('body').clientHeight;
-    // const headerHeight = document.querySelector('header').clientHeight;
-    // const footerHeight = document.querySelector('footer').clientHeight;
+    const bodyHeight = document.querySelector('body').clientHeight;
+    const headerHeight = document.querySelector('header').clientHeight;
+    const footerHeight = document.querySelector('footer').clientHeight;
 
-    // const mapWidth = window.screen.width;
-    // const mapHeight = bodyHeight - headerHeight - footerHeight;
+    const mapWidth = window.screen.width;
+    const mapHeight = bodyHeight - headerHeight - footerHeight;
 
-    // this.setState({
-    //   mapWidth: mapWidth,   
-    //   mapHeight: mapHeight,
-    //   isSizeDefined: true
-    // });
+    this.setState({
+      mapWidth: mapWidth,   
+      mapHeight: mapHeight,
+      isSizeDefined: true
+    });
   }
 
   componentDidMount() {
@@ -51,8 +43,10 @@ class Content extends Component {
     return (
       <main className={ classes.content }>
         <Grid container spacing={12} alignItems="stretch">
-          <Grid className={ classes.bbb } item sm={12}>
-            <p>123123</p>
+          <Grid item sm={12}>
+            { this.state.isSizeDefined &&
+              <ParkingsMap width={ this.state.mapWidth } height={ this.state.mapHeight } />
+            }
           </Grid>
         </Grid>
       </main>

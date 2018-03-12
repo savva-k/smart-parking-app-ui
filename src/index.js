@@ -8,9 +8,10 @@ import Footer from './Footer';
 import registerServiceWorker from './registerServiceWorker';
 
 const app = <MuiThemeProvider>
-        <Content />
+        <Header/>
+        <Content/>
         <Footer/>
     </MuiThemeProvider>;
-    
+
 ReactDOM.render(app, document.getElementById('root'));
 registerServiceWorker();

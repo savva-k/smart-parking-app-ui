@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Grid from 'material-ui/Grid';
 import { withStyles } from 'material-ui/styles';
 import BottomNavigation, { BottomNavigationAction } from 'material-ui/BottomNavigation';
 import FavoriteIcon from 'material-ui-icons/Favorite';
@@ -17,9 +16,9 @@ class Footer extends Component {
         const { classes } = this.props;
         return <footer className={ classes.footer }>
             <BottomNavigation>
-                <BottomNavigationAction label="Map" icon={<LocationOnIcon/>} />
-                <BottomNavigationAction label="Favorites" icon={<FavoriteIcon/>} />
-                <BottomNavigationAction label="Profile" icon={<AccountCircle/>} />
+                <BottomNavigationAction label="Map" showLabel={ true } icon={<LocationOnIcon/>} />
+                <BottomNavigationAction label="Favorites" showLabel={ true } icon={<FavoriteIcon/>} />
+                <BottomNavigationAction label="Profile" showLabel={ true } icon={<AccountCircle/>} />
             </BottomNavigation>
         </footer>;
     }
