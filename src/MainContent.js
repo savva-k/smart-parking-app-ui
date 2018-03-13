@@ -9,6 +9,7 @@ import Grid from 'material-ui/Grid';
 const styles = theme => ({
     content: {
         flex: '1 0 auto',
+        zIndex: -1
     },
 });
 
