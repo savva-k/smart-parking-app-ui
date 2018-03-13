@@ -8,6 +8,7 @@ import CarIcon from 'material-ui-icons/DirectionsCar';
 const styles = theme => ({
     header: {
         flexShrink: 0,
+        zIndex: 1,
     },
     toolbar: {
         justifyContent: "center",
